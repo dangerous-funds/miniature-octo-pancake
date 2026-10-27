@@ -1,4 +1,4 @@
-# soroauth
+# miniature-octo-pancake
 
 [![ci](https://github.com/soroauth/soroauth-go/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/soroauth/soroauth-go/actions/workflows/ci.yml)
 [![go-stellar-sdk@main](https://github.com/soroauth/soroauth-go/actions/workflows/ci-sdk-main.yml/badge.svg?branch=main)](https://github.com/soroauth/soroauth-go/actions/workflows/ci-sdk-main.yml)
@@ -7,23 +7,23 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Status](https://img.shields.io/badge/status-unaudited-orange)](SECURITY.md#status-of-this-library)
 
-soroauth builds, signs and inspects Soroban authorization entries in Go. When a
+miniature-octo-pancake builds, signs and inspects Soroban authorization entries in Go. When a
 contract calls `require_auth()` on an address that is not the transaction's
 source account, the transaction has to carry a signed
 `SorobanAuthorizationEntry` for that address — and the signature is not over the
 entry, but over a `HashIdPreimage` whose shape depends on which credential arm
 is in use. The Go SDK ships all of those XDR types and none of the code that
-builds or signs those preimages. soroauth is that code, for all three address
+builds or signs those preimages. miniature-octo-pancake is that code, for all three address
 credential arms: legacy `SOROBAN_CREDENTIALS_ADDRESS`, CAP-71
 `SOROBAN_CREDENTIALS_ADDRESS_V2`, and CAP-71
 `SOROBAN_CREDENTIALS_ADDRESS_WITH_DELEGATES` including nested delegate trees.
 
 > [!TIP]
-> **Visual Studio & Interactive Frontend**: For the standalone web application, interactive authorization entry builder, preimage derivation lab, multi-signer vault, and two-pass simulation engine, see [**`soroauth-frontend`**](file:///home/computeroracle/Desktop/soroauth-frontend).
+> **Visual Studio & Interactive Frontend**: For the standalone web application, interactive authorization entry builder, preimage derivation lab, multi-signer vault, and two-pass simulation engine, see [**`miniature-octo-pancake-frontend`**](file:///home/computeroracle/Desktop/miniature-octo-pancake-frontend).
 
 ## Contents
 
-- [Visual Web Studio (soroauth-frontend)](#visual-web-studio-soroauth-frontend)
+- [Visual Web Studio (miniature-octo-pancake-frontend)](#visual-web-studio-miniature-octo-pancake-frontend)
 - [Install](#install)
 - [Common tasks](#common-tasks)
 - [Container image](#container-image)
@@ -44,17 +44,17 @@ credential arms: legacy `SOROBAN_CREDENTIALS_ADDRESS`, CAP-71
 - [Compatibility and deprecation](docs/compatibility.md)
 - [Adding a signer](docs/adding-a-signer.md)
 - [Verification service runbook](docs/verification-service-runbook.md)
-- [soroauth vs soroauth-explain](docs/soroauth-vs-explain.md)
+- [miniature-octo-pancake vs soroauth-explain](docs/soroauth-vs-explain.md)
 - [Status](#status)
-- [What soroauth deliberately does not do](#what-soroauth-deliberately-does-not-do)
+- [What miniature-octo-pancake deliberately does not do](#what-soroauth-deliberately-does-not-do)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Visual Web Studio (soroauth-frontend)
+## Visual Web Studio (miniature-octo-pancake-frontend)
 
 The project frontend has been decoupled into an independent web application and developer studio:
 
-- **Repository**: [`soroauth-frontend`](file:///home/computeroracle/Desktop/soroauth-frontend)
+- **Repository**: [`miniature-octo-pancake-frontend`](file:///home/computeroracle/Desktop/miniature-octo-pancake-frontend)
 - **Local Dev Server**: `http://localhost:3005`
 - **Features**:
   - **CAP-71 Authorization Entry Builder**: Visual tree builder for Legacy Address (Arm 1), Address V2 (Arm 2), and Delegate Trees (Arm 3).
@@ -308,8 +308,8 @@ delegate count, and `verify --verbose` reports one verdict per node:
 
 ```sh
 soroauth verify --entry "$ENTRY" --network testnet --verbose
-# soroauth: verify: entry: node G...: verified
-# soroauth: verify: ok
+# miniature-octo-pancake: verify: entry: node G...: verified
+# miniature-octo-pancake: verify: ok
 ```
 
 Neither flag changes `--json` output, and neither ever echoes an entry or a
@@ -1344,7 +1344,7 @@ top-level node, why `AuthorizeAll` succeeds with a delegate node unsigned, why
 the expiration ledger is inclusive, whether the legacy arm is deprecated — are
 answered with their sources in [docs/faq.md](docs/faq.md).
 
-## What soroauth deliberately does not do
+## What miniature-octo-pancake deliberately does not do
 
 soroauth is a signing and inspection library for Soroban authorization entries.
 It is intentionally narrow:

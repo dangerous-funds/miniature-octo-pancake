@@ -1,8 +1,8 @@
 {
-  "name": "soroauth-go-tooling",
+  "name": "miniature-octo-pancake-tooling",
   "version": "0.0.0",
   "private": true,
-  "description": "Documentation and diagram tooling for soroauth-go",
+  "description": "Documentation and diagram tooling for miniature-octo-pancake",
   "scripts": {
     "spellcheck": "cspell --config cspell.json './**/*.md'",
     "format:md": "prettier --write \"**/*.md\"",
