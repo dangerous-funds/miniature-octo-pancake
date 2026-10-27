@@ -18,8 +18,12 @@ credential arms: legacy `SOROBAN_CREDENTIALS_ADDRESS`, CAP-71
 `SOROBAN_CREDENTIALS_ADDRESS_V2`, and CAP-71
 `SOROBAN_CREDENTIALS_ADDRESS_WITH_DELEGATES` including nested delegate trees.
 
+> [!TIP]
+> **Visual Studio & Interactive Frontend**: For the standalone web application, interactive authorization entry builder, preimage derivation lab, multi-signer vault, and two-pass simulation engine, see [**`soroauth-frontend`**](file:///home/computeroracle/Desktop/soroauth-frontend).
+
 ## Contents
 
+- [Visual Web Studio (soroauth-frontend)](#visual-web-studio-soroauth-frontend)
 - [Install](#install)
 - [Common tasks](#common-tasks)
 - [Container image](#container-image)
@@ -45,6 +49,19 @@ credential arms: legacy `SOROBAN_CREDENTIALS_ADDRESS`, CAP-71
 - [What soroauth deliberately does not do](#what-soroauth-deliberately-does-not-do)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Visual Web Studio (soroauth-frontend)
+
+The project frontend has been decoupled into an independent web application and developer studio:
+
+- **Repository**: [`soroauth-frontend`](file:///home/computeroracle/Desktop/soroauth-frontend)
+- **Local Dev Server**: `http://localhost:3005`
+- **Features**:
+  - **CAP-71 Authorization Entry Builder**: Visual tree builder for Legacy Address (Arm 1), Address V2 (Arm 2), and Delegate Trees (Arm 3).
+  - **Preimage & Payload Derivation Lab**: Computes `HashIdPreimage` binaries and 32-byte SHA-256 signing payloads with full byte offset breakdown.
+  - **Multi-Signer Vault**: In-browser signer testing supporting Ed25519 keypairs, WebAuthn Passkeys (Secp256r1), Multi-Sig M-of-N thresholds, and Turnkey HSM RPCs.
+  - **Two-Pass Simulator & Diff Engine**: Evaluates VM storage footprint, resource fees, and node-by-node verification verdicts (`soroauth verify`).
+  - **CLI & XDR Hub**: Generates native `soroauth` CLI commands and base64 XDR / JSON exports.
 
 ## Install
 
